@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Details</title>
+</head>
+<body>
+    <h1>Contact Details</h1>
+    {% for contact in contacts %}
+        <p>Name: {{ contact.name }}</p>
+        <p>Email: {{ contact.email }}</p>
+        <p>Message: {{ contact.message }}</p>
+        <hr>
+    {% endfor %}
+    <a href="{{ url_for('index') }}"><button>Return to Main Page</button></a>
+</body>
+</html>
