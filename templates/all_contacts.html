@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Details</title>
+    <title>All Contacts</title>
 </head>
 <body>
-    <h1>Contact Details</h1>
-    {% for contact in contacts %}
-        <p>Name: {{ contact.name }}</p>
-        <p>Email: {{ contact.email }}</p>
-        <p>Message: {{ contact.message }}</p>
-        <hr>
-    {% endfor %}
+    <h1>All Contacts and Message</h1>
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Message</th>
+        </tr>
+        {% for contact in contacts %}
+        <tr>
+            <td>{{ contact[0] }}</td>
+            <td>{{ contact[1] }}</td>
+            <td>{{ contact[2] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
     <a href="{{ url_for('index') }}"><button>Return to Main Page</button></a>
 </body>
 </html>
